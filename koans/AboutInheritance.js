@@ -25,7 +25,7 @@ describe('About inheritance', function() {
   });
 
   it('should be able to call a method on the derived object', function() {
-    expect(this.swedishChef.cook()).toEqual('Mmm soup!');
+    expect(this.swedishChef.cook()).toEqual('Mmmm soup!');
   });
 
   it('should be able to call a method on the base object', function() {
@@ -71,7 +71,7 @@ describe('About Crockford\'s inheritance improvement', function() {
   });
 
   it('should be able to call a method on the derived object', function() {
-    expect(this.gonzo.doTrick()).toEqual(undefined);
+    expect(this.gonzo.doTrick()).toEqual('eat a tire');
   });
 
   it('should be able to call a method on the base object', function() {
@@ -84,6 +84,6 @@ describe('About Crockford\'s inheritance improvement', function() {
   });
 
   it('should set constructor parameters on the derived object', function() {
-    expect(this.gonzo.trick).toEqual('do');
+    expect(this.gonzo.trick).toEqual('eat a tire');
   });
 });
