@@ -42,9 +42,9 @@ describe('About Applying What We Have Learnt', function() {
     /* solve using filter() & all() / any() */
     var productsWithoutNuts = _(products).filter(function(product) { return product.containsNuts === false; });
     var hasMushrooms = function(x) { return x === 'mushrooms'; };
-    for (var i=0; i < productsWithoutNuts.length; i++) {
-      if(!_(productsWithoutNuts[i].ingredients).any(hasMushrooms)) {
-        productsICanEat.push(productsWithoutNuts[i])
+    for (var i = 0; i < productsWithoutNuts.length; i++) {
+      if (!_(productsWithoutNuts[i].ingredients).any(hasMushrooms)) {
+        productsICanEat.push(productsWithoutNuts[i]);
       }
     }
     expect(productsICanEat.length).toBe(1);
@@ -67,13 +67,12 @@ describe('About Applying What We Have Learnt', function() {
   it('should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)', function () {
     var sum = _(_.range(0, 1000)).reduce(
       function(initial, x) {
-        if (x % 3 === 0 || x % 5 === 0){
+        if (x % 3 === 0 || x % 5 === 0) {
           return initial + x;
         } else {
-          return initial
+          return initial;
         }
-      },
-    )
+      });
     expect(233168).toBe(sum);
   });
 
@@ -92,18 +91,16 @@ describe('About Applying What We Have Learnt', function() {
 
   it('should count the ingredient occurrence (functional)', function () {
     var ingredientCount = { '{ingredient name}': 0 };
-    var ingredients = _(_(products).map(function(product) { return (product.ingredients); })).flatten()
+    var ingredients = _(_(products).map(function(product) { return (product.ingredients); })).flatten();
 
     var reduction = _(ingredients).reduce(
       function(memo, x) {
         if (!ingredientCount[x]) {
           ingredientCount[x] = 1;
         } else {
-          ingredientCount[x] += 1
+          ingredientCount[x] += 1;
         }
-      },
-    )
-    console.log(ingredientCount)
+      });
     /* chain() together map(), flatten() and reduce() */
     expect(ingredientCount['mushrooms']).toBe(2);
   });
